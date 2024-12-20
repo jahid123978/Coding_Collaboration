@@ -1,19 +1,21 @@
 {
-   "installCommand": "npm install --lagacy-peer-deps",
-   "version": 2,
-   "builds":[
-    {
+    "installCommand": "npm install --legacy-peer-deps",
+    "version": 2,
+    "builds": [
+      {
         "src": "src/server.ts",
         "use": "@vercel/node"
-    }
-   ],
-   "routes":[
-    {"src": "/(./*)",
-     "dest": "src/server.ts",
-     "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-     "headers":{
-        "Access-Control-Allow-Origin": "*"
-     } 
-    }
-   ]
-}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "src/server.ts",
+        "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    ]
+  }
+  
