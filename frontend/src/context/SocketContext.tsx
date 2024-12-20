@@ -27,9 +27,7 @@ export const useSocket = (): SocketContextType => {
     return context
 }
 
-// const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
-const BACKEND_URL = "https://coding-collaboration-socket-api.vercel.app/"
-// const BACKEND_URL = "http://localhost:4000/"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
 
 const SocketProvider = ({ children }: { children: ReactNode }) => {
@@ -49,6 +47,7 @@ const SocketProvider = ({ children }: { children: ReactNode }) => {
         [],
     )
  console.log("socket: ", socket)
+ console.log("BACKEND_URL: ", BACKEND_URL)
 
     const handleError = useCallback(
         (err: any) => {
