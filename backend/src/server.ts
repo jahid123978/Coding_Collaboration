@@ -13,14 +13,8 @@ const app = express()
 
 app.use(express.json())
 
-app.use(cors({ origin: "https://coding-collaboration-live.vercel.app/",
-	methods: ['GET', 'POST', 'PATCH', 'PUT']
- }))
- app.use((req, res, next) => { 
-	res.header('Access-Control-Allow-Origin', 'https://coding-collaboration-live.vercel.app/');
-   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-   next(); });
+app.use(cors())
+ 
 
 app.use(express.static(path.join(__dirname, "public"))) // Serve static files
 
