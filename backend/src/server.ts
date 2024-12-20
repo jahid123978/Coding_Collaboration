@@ -25,7 +25,6 @@ const io = new Server(server, {
 		methods: ['GET', 'POST', 'PATCH', 'PUT']
 	},
 	maxHttpBufferSize: 1e8,
-	pingTimeout: 60000,
 })
 
 let userSocketMap: User[] = []
