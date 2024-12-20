@@ -25,6 +25,7 @@ const io = new Server(server, {
 	maxHttpBufferSize: 1e8,
 	pingTimeout: 60000,
 })
+app.use(cors({ origin: "http://localhost:5173" }));
 
 let userSocketMap: User[] = []
 
