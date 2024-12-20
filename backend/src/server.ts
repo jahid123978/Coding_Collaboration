@@ -13,7 +13,9 @@ const app = express()
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors({ origin: "http://localhost:5173",
+	methods: ['GET', 'POST', 'PATCH', 'PUT']
+ }))
 
 app.use(express.static(path.join(__dirname, "public"))) // Serve static files
 
@@ -26,9 +28,6 @@ const io = new Server(server, {
 	maxHttpBufferSize: 1e8,
 	pingTimeout: 60000,
 })
-app.use(cors({ origin: "http://localhost:5173",
-	methods: ['GET', 'POST', 'PATCH', 'PUT']
- }));
 
 let userSocketMap: User[] = []
 
